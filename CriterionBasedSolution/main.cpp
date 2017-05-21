@@ -1,7 +1,5 @@
 #include "header.h"
-
-const int price1 = 50;
-const int price2 = 60;
+	
 
 int main() {
 	//Настройка

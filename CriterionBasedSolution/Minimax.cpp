@@ -6,7 +6,7 @@ void Minimax(int A[ARRAYSIZE][ARRAYSIZE]) {
 
 	//Расчёт минимумов
 	for (int i = 0; i < ARRAYSIZE; i++) {
-		int min = A[i][i];
+		int min = A[i][0];
 		for (int j = 0; j < ARRAYSIZE; j++) {
 			if (A[i][j] < min) {
 				min = A[i][j];
