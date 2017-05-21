@@ -1,12 +1,7 @@
 #include "header.h"
 
-void BayesLaplace(int A[ARRAYSIZE][ARRAYSIZE]) {
+void BayesLaplace(int A[ARRAYSIZE][ARRAYSIZE], double q[ARRAYSIZE]) {
 	double air[4];
-	double q[4];
-	q[0] = 0.15;
-	q[1] = 0.3;
-	q[2] = 0.3;
-	q[3] = 0.25;
 	for (int i = 0; i < 4; i++) {
 		air[i] = 0;
 		for (int j = 0; j < 4; j++) {

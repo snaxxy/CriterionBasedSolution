@@ -23,13 +23,13 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="minmax.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="BayesLaplace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Savage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Minimax.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

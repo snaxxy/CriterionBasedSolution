@@ -2,51 +2,71 @@
 
 const int price1 = 50;
 const int price2 = 60;
+
 int main() {
 	//Настройка
 	setlocale(LC_ALL, "RUS");
 	//Начальные условия
-	//Solution A[4];
 	int A[ARRAYSIZE][ARRAYSIZE];
+	double q[ARRAYSIZE];
 
-	for (int i = 0; i < 4; i++) {
-		for (int j = 0; j < 4; j++) {
+	int qsum = 0;
+
+	//Ввод частот получения спроса
+	cout << "Введите частоты появления спроса:" << endl;
+	for (int i = 0; i<ARRAYSIZE; i++)
+	{
+		cout << "Спрос " << i + 1 << " = ";
+		cin >> q[i];
+		qsum += q[i];
+	}
+
+	//Расчёт вероятностей
+	cout << endl << "Рассчитанные вероятности:" << endl;
+	for (int i = 0; i<ARRAYSIZE; i++)
+	{
+		q[i] = q[i] / qsum;
+		cout << "q" << i + 1 << " = " << q[i] << endl;
+	}
+
+	cout << endl << "Матрица системных оценок:" << endl;
+
+	//Расчёт матрицы системных оценок
+	for (int i = 0; i < ARRAYSIZE; i++) {
+		for (int j = 0; j < ARRAYSIZE; j++) {
 			if (j >= i) {
 				A[i][j] = (i + 1) * (SELLINGPRICE - BUYINGPRICE);
-				//A[i].setf(j, (i + 1) * (price2 - price1));
 			}
 			else {
-				A[i][j] = (j + 1) * (SELLINGPRICE - (i + 1)*BUYINGPRICE);
-				//A[i].setf(j, (j + 1) * price2 - (i + 1)*price1);
+				A[i][j] = (j + 1) * SELLINGPRICE - (i + 1)*BUYINGPRICE;
 			}
 		}
 	}
-	cout << "    |  f1  |  f2  |  f3  |  f4  |" << endl;
-	for (int i = 0; i < 4; i++) {
+
+	//Вывод матрицы системных оценок
+	cout << "    |";
+	for (int i=0; i < ARRAYSIZE; i++)
+	{
+		cout << "  f" << i+1 << "  |";
+	}
+	cout << endl << "-";
+	for (int i = 0; i < ARRAYSIZE; i++)
+	{
+		cout << "--------";
+	}
+	cout << endl;
+	for (int i = 0; i < ARRAYSIZE; i++) {
 		cout << " x" << i + 1 << " |";
-		for (int j = 0; j < 4; j++) {
-			//if (A[i].getf(j) > 0) {
-			//	cout << "  " << A[i].getf(j) << "  |";
-			if (A[i][j] > 0)
-			{
-				cout << "  " << A[i][j] << "  |";
-			}
-			else {
-				//if (A[i].getf(j) < 0 && A[i].getf(j)>-100) {
-				//	cout << " " << A[i].getf(j) << "  |";
-				if (A[i][j] < 0 && A[i][j]>-100) {
-					cout << " " << A[i][j] << "  |";
-				}
-				else {
-					//cout << " " << A[i].getf(j) << " |";
-					cout << " " << A[i][j] << " |";
-				}
-			}
+		for (int j = 0; j < ARRAYSIZE; j++) {
+			printf("%5d", A[i][j]);
+			cout << " |";
 		}
 		cout << endl;
 	}
-	minmax(A);
-	BayesLaplace(A);
+
+	//Методы
+	Minimax(A);
+	BayesLaplace(A, q);
 	Savage(A);
 	system("pause");
 }
