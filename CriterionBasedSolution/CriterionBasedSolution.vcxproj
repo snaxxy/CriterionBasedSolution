@@ -142,6 +142,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="header.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BayesLaplace.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="minmax.cpp" />
+    <ClCompile Include="Savage.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
