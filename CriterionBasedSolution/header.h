@@ -1,5 +1,5 @@
 #include <iostream>
-#include <ctime>
+
 #define ARRAYSIZE 4
 #define BUYINGPRICE 50
 #define SELLINGPRICE 60

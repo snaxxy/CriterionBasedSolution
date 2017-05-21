@@ -65,8 +65,12 @@ int main() {
 	}
 
 	//Ìועמהû
+	cout << endl << "===========================" << endl;
 	Minimax(A);
+	cout << endl << "===========================" << endl;
 	BayesLaplace(A, q);
+	cout << endl << "===========================" << endl;
 	Savage(A);
+
 	system("pause");
 }

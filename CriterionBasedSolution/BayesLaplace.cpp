@@ -13,7 +13,6 @@ void BayesLaplace(int A[ARRAYSIZE][ARRAYSIZE], double q[ARRAYSIZE]) {
 	}
 
 	//Вывод столбца мат. ожиданий
-	cout << endl;
 	cout << "Критерий Байеса - Лапласа:" << endl;
 	cout << endl;
 	cout << "  X |  a_ir " << endl;
@@ -37,7 +36,7 @@ void BayesLaplace(int A[ARRAYSIZE][ARRAYSIZE], double q[ARRAYSIZE]) {
 	}
 
 	//Вывод максимального ожидания
-	cout << "max a_ir = " << max << endl;
+	cout << "Максимум a_ir = " << max << endl;
 	cout << endl;
 
 	//Вывод наилучшего варианта

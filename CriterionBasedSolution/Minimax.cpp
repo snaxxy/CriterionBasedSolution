@@ -40,7 +40,7 @@ void Minimax(int A[ARRAYSIZE][ARRAYSIZE]) {
 	}
 
 	//Вывод максимума из минимумов
-	cout << "max a_ir = " << max << endl << endl;
+	cout << "Максимум a_ir = " << max << endl << endl;
 
 	//Вывод лучшего варианта
 	cout << "Наилучший вариант - x" << maxnum + 1 << endl;
