@@ -15,17 +15,6 @@ void Minimax(int A[ARRAYSIZE][ARRAYSIZE]) {
 		air[i] = min;
 	}
 
-	int max = air[0]; //Максимум из минимумов
-	int maxnum = 0; //Номер максимума
-
-	//Поиск максимума
-	for (int i = 0; i < ARRAYSIZE; i++) {
-		if (air[i]>max) {
-			max = air[i];
-			maxnum = i;
-		}
-	}
-
 	//Вывод минимумов
 	cout << endl;
 	cout << "Минимаксный критерий:" << endl;
@@ -38,6 +27,17 @@ void Minimax(int A[ARRAYSIZE][ARRAYSIZE]) {
 		cout << endl;
 	}
 	cout << endl;
+
+	int max = air[0]; //Максимум из минимумов
+	int maxnum = 0; //Номер максимума
+
+	//Поиск максимума
+	for (int i = 0; i < ARRAYSIZE; i++) {
+		if (air[i]>max) {
+			max = air[i];
+			maxnum = i;
+		}
+	}
 
 	//Вывод максимума из минимумов
 	cout << "max a_ir = " << max << endl << endl;
